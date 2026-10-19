@@ -1,9 +1,9 @@
-# Secrets and per-machine Claude state (D9)
-.claude/settings.local.json
-.claude/.env
-.claude/agent-memory/
-.claude/scripts/__pycache__/
-.claude/.DS_Store
+# AI tooling (Claude, Codex) and its docs stay on this machine, never in git (D9)
+/.claude/
+/docs/
+/plans/
+/LLM.md
+/AGENTS.md
 
 # The user's inputs and the tool's reports (A12): APKs, real ad unit IDs, per-run output
 /input/

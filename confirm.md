@@ -22,7 +22,7 @@ Mọi số đo ghi kèm ngày, máy và input. Máy đo: Apple M2 Pro, 32 GB RAM
 | D6 | File đầu vào đặt trong **`input/`**; báo cáo HTML ghi vào **`output/`**. | 2026-10-05 |
 | D7 | Kiểm tra lúc chạy là **bán tự động**: tool cài APK qua adb và đọc log; người test tự bấm qua app. | 2026-10-05 |
 | D8 | Bộ khung `.claude/` của `fbdl` được viết lại cho dự án này. Các skill mobile được giữ nhưng ghi là không dùng; `mobile-development` chuyển sang dùng. Bản backup: `~/Desktop/VerifyTools-scaffold-backup-20261005-1609.zip`. | 2026-10-05 |
-| D9 | Git: commit `docs/`, `LLM.md`, `AGENTS.md`, `README.md`, `confirm.md`, `.claude/`. Không commit `.claude/settings.local.json` (chứa `GEMINI_API_KEY`), `.claude/.env`, `.claude/agent-memory/`. | 2026-10-05 |
+| D9 | Git: chỉ commit code, test, `README.md`, `confirm.md` và cấu hình dự án. Công cụ AI và tài liệu cho AI (`.claude/`, `LLM.md`, `AGENTS.md`, `docs/`, `plans/`) chỉ nằm trên máy, git-ignored, và đã được xoá khỏi lịch sử trước lần push đầu. Thay bản 2026-10-05, khi các file này còn được commit. | 2026-10-19 |
 | D10 | Code chia theo ba bước **Input → Process → Output**: `src/apkverify/input/` (đọc file, APK, log thiết bị), `process/` (kiểm tra thuần), `output/` (terminal, báo cáo HTML), ở gốc package; phần runtime cũng chia theo ba bước. Đợt tách chỉ đổi cấu trúc, không đổi hành vi. | 2026-10-19 |
 
 ## Mặc định của Claude (A)

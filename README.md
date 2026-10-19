@@ -68,7 +68,3 @@ ngay trên terminal. Bấm **Enter** (hoặc Ctrl+C) khi xong, tool ghi báo cá
 ## Tài liệu
 
 - [`confirm.md`](confirm.md): các quyết định và câu hỏi còn mở.
-- [`docs/static-check-spec.md`](docs/static-check-spec.md): từng mã lỗi của kiểm tra tĩnh và cách tool đọc spec,
-  Remote Config, APK.
-- [`docs/runtime-check-spec.md`](docs/runtime-check-spec.md): kiểm tra lúc chạy.
-- [`LLM.md`](LLM.md): cấu trúc code (cho người và AI sửa tool).
