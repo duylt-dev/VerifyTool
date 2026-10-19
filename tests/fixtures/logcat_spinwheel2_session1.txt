@@ -1,0 +1,391 @@
+--------- beginning of main
+         1791192282.018 31227 31227 D TESTERADSEVENT: 
+         1791192282.018 31227 31227 D TESTERADSEVENT: 
+         1791192282.018 31227 31227 D TESTERADSEVENT: 
+         1791192282.018 31227 31227 D TESTERADSEVENT: 
+         1791192282.018 31227 31227 D TESTERADSEVENT: 
+         1791192282.018 31227 31227 D TESTERADSEVENT: Screen change to: co.spinthewheel:id/splashFragment
+         1791192282.018 31227 31227 D TESTERADSEVENT: 
+         1791192282.018 31227 31227 D TESTERADSEVENT: 
+         1791192282.018 31227 31227 D TESTERADSEVENT: 
+         1791192282.018 31227 31227 D TESTERADSEVENT: 
+         1791192282.018 31227 31227 D TESTERADSEVENT: 
+         1791192283.873 31227 31227 D CHECKINITADS: initRemoteConfig: isSuccessful = true
+         1791192283.877 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: Language1.1 Language1.1_native1 ca-app-pub-2222869408518511/1266234769
+         1791192283.878 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: Language1.1 Language1.1_native2 ca-app-pub-2222869408518511/9224615834
+         1791192283.879 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: Language1.2 Language1.2_native1 ca-app-pub-2222869408518511/4163860841
+         1791192283.879 31227 31227 D TESTERADSEVENT: start load Interstitial: preload_Interstitial_ID1 ca-app-pub-2222869408518511/5397051460 buffer 2
+         1791192283.881 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: Language1.2 Language1.2_native2 ca-app-pub-2222869408518511/5213323836
+         1791192285.676 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: Language1.2 Language1.2_native1 ca-app-pub-2222869408518511/4163860841
+         1791192285.677 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: Language1.1 Language1.1_native2 ca-app-pub-2222869408518511/9224615834
+         1791192285.872 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: Language1.2 Language1.2_native2 ca-app-pub-2222869408518511/5213323836
+         1791192286.370 31227 31398 D TESTERADSEVENT: load success Interstitial Preload: preload_Interstitial_ID1 ca-app-pub-2222869408518511/5397051460
+         1791192286.380 31227 31227 D TESTERADSEVENT: start load AdmobNativeInterstitialAd: Splash_afterinter Splash_afterinter_native ca-app-pub-2222869408518511/2910488928
+         1791192286.424 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: Language1.1 Language1.1_native1 ca-app-pub-2222869408518511/1266234769
+         1791192287.452 31227 31399 D TESTERADSEVENT: load success AdmobNativeInterstitialAd: Splash_afterinter Splash_afterinter_native ca-app-pub-2222869408518511/2910488928
+         1791192287.453 31227 31227 D TESTERADSEVENT: onAdsExhausted Interstitial Preload: preload_Interstitial_ID1 ca-app-pub-2222869408518511/5397051460
+         1791192287.477 31227 31397 D TESTERADSEVENT: show success Interstitial Preload: splash preload_Interstitial_ID1 ca-app-pub-2222869408518511/5397051460
+         1791192287.609 31227 31227 D TESTERADSEVENT: show success native_interstitial: Splash_afterinter Splash_afterinter_native ca-app-pub-2222869408518511/2910488928
+         1791192298.983 31227 31399 D TESTERADSEVENT: load success Interstitial Preload: preload_Interstitial_ID1 ca-app-pub-2222869408518511/5397051460
+         1791192311.436 31227 31396 D TESTERADSEVENT: load success Interstitial Preload: preload_Interstitial_ID1 ca-app-pub-2222869408518511/5397051460
+         1791192356.984 31227 31398 D TESTERADSEVENT: close Interstitial Preload: splash preload_Interstitial_ID1 ca-app-pub-2222869408518511/5397051460
+         1791192372.851 31227 31227 D TESTERADSEVENT: close native_interstitial: Splash_afterinter Splash_afterinter_native ca-app-pub-2222869408518511/2910488928
+         1791192372.852 31227 31227 D TESTERADSEVENT: 
+         1791192372.852 31227 31227 D TESTERADSEVENT: 
+         1791192372.852 31227 31227 D TESTERADSEVENT: 
+         1791192372.852 31227 31227 D TESTERADSEVENT: 
+         1791192372.852 31227 31227 D TESTERADSEVENT: 
+         1791192372.852 31227 31227 D TESTERADSEVENT: Screen change to: co.spinthewheel:id/languageFragment
+         1791192372.852 31227 31227 D TESTERADSEVENT: 
+         1791192372.852 31227 31227 D TESTERADSEVENT: 
+         1791192372.852 31227 31227 D TESTERADSEVENT: 
+         1791192372.852 31227 31227 D TESTERADSEVENT: 
+         1791192372.852 31227 31227 D TESTERADSEVENT: 
+         1791192372.936 31227 31227 D TESTERADSEVENT: start load AdmobNativeInterstitialAd: Splash_afterinter Splash_afterinter_native ca-app-pub-2222869408518511/2910488928
+         1791192372.960 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: language2.1 language2.1_naitve ca-app-pub-2222869408518511/6406880802
+         1791192372.979 31227 31227 D TESTERADSEVENT: show success native: Language1.1 Language1.1_native1 ca-app-pub-2222869408518511/1266234769
+         1791192372.984 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: Language1.1 Language1.1_native1 ca-app-pub-2222869408518511/1266234769
+         1791192373.887 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: Language1.1 Language1.1_native1 ca-app-pub-2222869408518511/1266234769
+         1791192374.191 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: language2.1 language2.1_naitve ca-app-pub-2222869408518511/6406880802
+         1791192374.193 31227 31227 D TESTERADSEVENT: show success native: language2.1 language2.1_naitve ca-app-pub-2222869408518511/6406880802
+         1791192374.194 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: language2.1 language2.1_naitve ca-app-pub-2222869408518511/6406880802
+         1791192374.362 31227 31396 D TESTERADSEVENT: load success AdmobNativeInterstitialAd: Splash_afterinter Splash_afterinter_native ca-app-pub-2222869408518511/2910488928
+         1791192375.344 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: language2.1 language2.1_naitve ca-app-pub-2222869408518511/6406880802
+         1791192386.977 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: language2.2 language2.2_naitve ca-app-pub-2222869408518511/5093799136
+         1791192387.032 31227 31227 D TESTERADSEVENT: show success native: Language1.2 Language1.2_native1 ca-app-pub-2222869408518511/4163860841
+         1791192387.039 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: Language1.2 Language1.2_native1 ca-app-pub-2222869408518511/4163860841
+         1791192388.174 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: Language1.2 Language1.2_native1 ca-app-pub-2222869408518511/4163860841
+         1791192388.583 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: language2.2 language2.2_naitve ca-app-pub-2222869408518511/5093799136
+         1791192388.587 31227 31227 D TESTERADSEVENT: show success native: language2.2 language2.2_naitve ca-app-pub-2222869408518511/5093799136
+         1791192400.485 31227 31227 D TESTERADSEVENT: start load Interstitial: preload_Interstitial_ID1 ca-app-pub-2222869408518511/5397051460 buffer 2
+         1791192400.487 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: Onboard1.1 Onboard1.1_native1 ca-app-pub-2222869408518511/5648332906
+         1791192400.487 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: Onboard1.1 Onboard1.1_native2 ca-app-pub-2222869408518511/9667468964
+         1791192400.488 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: Language1.1 Language1.1_native1 ca-app-pub-2222869408518511/1266234769
+         1791192400.488 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: language2.1 language2.1_naitve ca-app-pub-2222869408518511/6406880802
+         1791192402.489 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: Onboard1.1 Onboard1.1_native2 ca-app-pub-2222869408518511/9667468964
+         1791192402.664 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: language2.1 language2.1_naitve ca-app-pub-2222869408518511/6406880802
+         1791192402.668 31227 31227 D TESTERADSEVENT: show success native: language2.1 language2.1_naitve ca-app-pub-2222869408518511/6406880802
+         1791192402.672 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: language2.1 language2.1_naitve ca-app-pub-2222869408518511/6406880802
+         1791192402.816 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: Onboard1.1 Onboard1.1_native1 ca-app-pub-2222869408518511/5648332906
+         1791192402.817 31227 31227 D TESTERADSEVENT: 
+         1791192402.817 31227 31227 D TESTERADSEVENT: 
+         1791192402.817 31227 31227 D TESTERADSEVENT: 
+         1791192402.817 31227 31227 D TESTERADSEVENT: 
+         1791192402.817 31227 31227 D TESTERADSEVENT: 
+         1791192402.817 31227 31227 D TESTERADSEVENT: Screen change to: co.spinthewheel:id/onboardFragment
+         1791192402.817 31227 31227 D TESTERADSEVENT: 
+         1791192402.817 31227 31227 D TESTERADSEVENT: 
+         1791192402.817 31227 31227 D TESTERADSEVENT: 
+         1791192402.817 31227 31227 D TESTERADSEVENT: 
+         1791192402.817 31227 31227 D TESTERADSEVENT: 
+         1791192402.840 31227 31227 D TESTERADSEVENT: start load AdmobNativeInterstitialAd: afterinterstitial afterinterstitial_native ca-app-pub-2222869408518511/4446931874
+         1791192402.840 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: Onboard2 Onboard2_native ca-app-pub-2222869408518511/5456761219
+         1791192402.840 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: onboard3 onboard3_native ca-app-pub-2222869408518511/5728223954
+         1791192402.887 31227 31227 D TESTERADSEVENT: show success native: Onboard1.1 Onboard1.1_native1 ca-app-pub-2222869408518511/5648332906
+         1791192404.036 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: Language1.1 Language1.1_native1 ca-app-pub-2222869408518511/1266234769
+         1791192405.383 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: language2.1 language2.1_naitve ca-app-pub-2222869408518511/6406880802
+         1791192405.383 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: Onboard2 Onboard2_native ca-app-pub-2222869408518511/5456761219
+         1791192405.503 31227 31398 D TESTERADSEVENT: load success AdmobNativeInterstitialAd: afterinterstitial afterinterstitial_native ca-app-pub-2222869408518511/4446931874
+         1791192405.504 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: onboard3 onboard3_native ca-app-pub-2222869408518511/5728223954
+         1791192415.078 31227 31227 D TESTERADSEVENT: show success native: Onboard2 Onboard2_native ca-app-pub-2222869408518511/5456761219
+         1791192415.078 31227 31227 D TESTERADSEVENT: show success native: onboard3 onboard3_native ca-app-pub-2222869408518511/5728223954
+         1791192434.495 31227 31398 D TESTERADSEVENT: show success Interstitial Preload: onboard3-start preload_Interstitial_ID1 ca-app-pub-2222869408518511/5397051460
+         1791192434.538 31227 31227 D TESTERADSEVENT: show success native_interstitial: afterinterstitial afterinterstitial_native ca-app-pub-2222869408518511/4446931874
+         1791192445.710 31227 31397 D TESTERADSEVENT: load success Interstitial Preload: preload_Interstitial_ID1 ca-app-pub-2222869408518511/5397051460
+         1791192449.467 31227 31397 D TESTERADSEVENT: close Interstitial Preload: onboard3-start preload_Interstitial_ID1 ca-app-pub-2222869408518511/5397051460
+         1791192453.498 31227 31227 D TESTERADSEVENT: close native_interstitial: afterinterstitial afterinterstitial_native ca-app-pub-2222869408518511/4446931874
+         1791192453.499 31227 31227 D TESTERADSEVENT: 
+         1791192453.499 31227 31227 D TESTERADSEVENT: 
+         1791192453.499 31227 31227 D TESTERADSEVENT: 
+         1791192453.499 31227 31227 D TESTERADSEVENT: 
+         1791192453.499 31227 31227 D TESTERADSEVENT: 
+         1791192453.499 31227 31227 D TESTERADSEVENT: Screen change to: co.spinthewheel:id/homeFragment
+         1791192453.499 31227 31227 D TESTERADSEVENT: 
+         1791192453.499 31227 31227 D TESTERADSEVENT: 
+         1791192453.499 31227 31227 D TESTERADSEVENT: 
+         1791192453.499 31227 31227 D TESTERADSEVENT: 
+         1791192453.499 31227 31227 D TESTERADSEVENT: 
+         1791192453.556 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: exitapp exitapp_native2 ca-app-pub-2222869408518511/4606713973
+         1791192453.591 31227 31227 D TESTERADSEVENT: start load AdmobNativeInterstitialAd: afterinterstitial afterinterstitial_native ca-app-pub-2222869408518511/4446931874
+         1791192453.592 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: exitapp exitapp_native1 ca-app-pub-2222869408518511/2179861186
+         1791192453.644 31227 31227 D TESTERADSEVENT: start load AdmobOpenAppAd: appresume appresume_openad1 ca-app-pub-2222869408518511/6654292812
+         1791192453.647 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192453.869 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: template_between template_between_native ca-app-pub-2222869408518511/2906619492
+         1791192454.884 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: exitapp exitapp_native1 ca-app-pub-2222869408518511/2179861186
+         1791192454.995 31227 31398 D TESTERADSEVENT: load success AdmobNativeInterstitialAd: afterinterstitial afterinterstitial_native ca-app-pub-2222869408518511/4446931874
+         1791192455.231 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192455.276 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192455.330 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192455.692 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: exitapp exitapp_native2 ca-app-pub-2222869408518511/4606713973
+         1791192455.785 31227 31398 D TESTERADSEVENT: load success AdmobOpenAppAd: appresume appresume_openad1 ca-app-pub-2222869408518511/6654292812
+         1791192455.786 31227 31227 D TESTERADSEVENT: start load AdmobOpenAppAd: appresume appresume_openad2 ca-app-pub-2222869408518511/6334833810
+         1791192456.035 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: template_between template_between_native ca-app-pub-2222869408518511/2906619492
+         1791192456.037 31227 31227 D TESTERADSEVENT: show success native: template_between template_between_native ca-app-pub-2222869408518511/2906619492
+         1791192456.686 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192456.708 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192456.730 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192457.628 31227 31396 D TESTERADSEVENT: load success AdmobOpenAppAd: appresume appresume_openad2 ca-app-pub-2222869408518511/6334833810
+         1791192457.804 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192457.817 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192457.833 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192459.474 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192459.493 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192459.572 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192460.752 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192460.761 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192460.781 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192461.759 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192461.775 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192461.797 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192462.494 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192462.509 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192462.533 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192463.354 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192463.361 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192463.382 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192464.445 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192464.458 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192464.481 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192465.155 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192465.174 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192465.196 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192466.115 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192466.125 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192466.149 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192466.793 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192466.807 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192466.829 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192467.583 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192467.595 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192467.613 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192468.686 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192468.693 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192468.714 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192469.545 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192469.558 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192469.579 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192470.264 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192470.276 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192470.298 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192471.035 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192471.042 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192471.064 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192471.982 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192471.992 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192472.013 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192472.734 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192472.741 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192472.762 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192474.145 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192474.159 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192474.184 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192475.266 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192475.276 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192475.299 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192476.027 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192476.043 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192476.063 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192476.754 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192476.761 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192476.785 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192478.237 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192478.258 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192478.280 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192478.975 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192478.991 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192479.009 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192479.765 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192479.775 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192479.795 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192480.836 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192480.842 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192480.863 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192482.263 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192482.279 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192482.299 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192483.155 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192483.175 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192483.197 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192484.085 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192484.096 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192484.116 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192484.865 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192484.876 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192484.897 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192486.015 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192486.026 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192486.060 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192486.814 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192486.826 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192486.846 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192488.093 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192488.109 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192488.131 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192488.795 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192488.807 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192488.829 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192489.817 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192489.825 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192489.848 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192490.344 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192490.359 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192490.378 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192491.084 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192491.092 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192491.112 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192492.165 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192492.183 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192492.205 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192492.965 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192492.974 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192492.998 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192493.796 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192493.808 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192493.829 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192494.576 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192494.593 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192494.616 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192495.314 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192495.327 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192495.352 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192496.314 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192496.325 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192496.344 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192497.117 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192497.126 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192497.156 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192498.265 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192498.276 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192498.299 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192499.620 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192499.729 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192499.809 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192501.305 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192501.316 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192501.370 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192502.475 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192502.494 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192502.515 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192503.525 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192503.542 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192503.565 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192504.334 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192504.343 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192504.365 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192505.438 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192505.462 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192505.485 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192506.308 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192506.326 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192506.346 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192507.174 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192507.212 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192507.232 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192508.334 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192508.346 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192508.365 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192509.047 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192509.062 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192509.082 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192510.054 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192510.150 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192510.244 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192511.605 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192511.608 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192511.629 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192513.354 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192513.362 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192513.394 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192514.185 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192514.192 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192514.213 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192515.175 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192515.192 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192515.214 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192516.055 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192516.080 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192516.100 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192517.405 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192517.427 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192517.448 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192518.108 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192518.125 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192518.144 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192519.755 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192519.775 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192519.800 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192520.347 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192520.359 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192520.379 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192520.994 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192521.009 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192521.029 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192523.943 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192523.967 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192523.988 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192524.985 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192524.993 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192525.012 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192525.712 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192525.725 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192525.745 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192526.834 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192526.841 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192526.878 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192527.654 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192527.660 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192527.680 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192528.385 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192528.392 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192528.414 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192529.184 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192529.192 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192529.214 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192530.485 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192530.491 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192530.514 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192531.064 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192531.074 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192531.097 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192532.944 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192532.959 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192532.983 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192534.104 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192534.109 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192534.136 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192534.805 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192534.825 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192534.845 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192535.884 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192535.893 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192535.915 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192536.494 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192536.508 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192536.530 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192537.484 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192537.492 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192537.513 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192538.356 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192538.377 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192538.412 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192539.284 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192539.292 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192539.315 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192540.113 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192540.126 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192540.146 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192540.733 31227 31397 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192540.746 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192540.773 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192541.484 31227 31396 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192541.492 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192541.513 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192542.785 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192542.793 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192542.822 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192543.653 31227 31398 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192543.660 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192543.685 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192544.965 31227 31399 D TESTERADSEVENT: load success AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192545.075 31227 31227 D TESTERADSEVENT: show success native: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520
+         1791192545.159 31227 31227 D TESTERADSEVENT: start load AdmobNativeAd: home_bottom home_bottom_native ca-app-pub-2222869408518511/6881523520

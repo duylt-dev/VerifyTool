@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="admob_app_id">ca-app-pub-1111111111111111~2222222222</string>
+    <string name="project_id">mini-project</string>
+    <string name="google_app_id">1:123456789012:android:0123456789abcdef</string>
+    <string name="gcm_defaultSenderId">123456789012</string>
+</resources>
