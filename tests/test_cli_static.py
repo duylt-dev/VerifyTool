@@ -32,7 +32,7 @@ def test_static_cli(tmp_path: Path, capsys: pytest.CaptureFixture[str], failed: 
     assert main(["static", "--input", str(source), "--out", str(out)]) == (1 if failed else 0)
     captured = capsys.readouterr()
     assert captured.err == ""
-    assert "apkverify 0.1.0: kiểm tra tĩnh\nAPK:  mini.apk" in captured.out
+    assert "apkverify 0.2.0: kiểm tra tĩnh\nAPK:  mini.apk" in captured.out
     assert "Spec: spec.xlsx (1 vị trí)" in captured.out
     assert "Remote Config: admob_id.json, config_show_ads.json\n\n" in captured.out
     if failed:

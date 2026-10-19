@@ -1,6 +1,6 @@
 [project]
 name = "apkverify"
-version = "0.1.0"
+version = "0.2.0"
 description = "Verify ads in a release APK against MO's spec and Firebase Remote Config before handing it to MO"
 readme = "README.md"
 requires-python = ">=3.11"
