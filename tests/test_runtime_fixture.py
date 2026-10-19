@@ -3,13 +3,13 @@
 import pytest
 from conftest import ROOT, make_apk_facts, make_placement, make_spec
 
-from apkverify.apk_reader import read_apk
-from apkverify.inputs import discover
+from apkverify.input.apk_reader import read_apk
+from apkverify.input.device.log_parser import parse_line
+from apkverify.input.discover import discover
+from apkverify.input.rc_reader import read_rc_files
+from apkverify.input.spec_reader import read_spec
 from apkverify.model import AdEvent, DeviceInfo, RuntimeResult
-from apkverify.rc_reader import read_rc_files
-from apkverify.runtime.log_parser import parse_line
-from apkverify.runtime.runtime_checks import build_runtime
-from apkverify.spec_reader import read_spec
+from apkverify.process.runtime.runtime_checks import build_runtime
 
 DEVICE = DeviceInfo("emulator-5554", "sdk_gphone16k_arm64", "17", True)
 

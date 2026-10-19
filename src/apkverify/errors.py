@@ -28,5 +28,5 @@ class AdbError(VerifyError):
 class RcFormatError(ValueError):
     """A Remote Config value is not JSON of the expected shape.
 
-    Not a VerifyError: `checks/rc_checks.py` turns it into the finding RC-JSON-INVALID.
+    Not a VerifyError: `process/static/rc_checks.py` turns it into the finding RC-JSON-INVALID.
     """

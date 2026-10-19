@@ -5,13 +5,14 @@ from collections import Counter
 import pytest
 from conftest import ROOT
 
-from apkverify.apk_reader import read_apk
-from apkverify.checks.static_result import build
 from apkverify.formats import publisher
-from apkverify.inputs import discover
+from apkverify.input.apk_reader import read_apk
+from apkverify.input.discover import discover
+from apkverify.input.rc_reader import read_rc_files
+from apkverify.input.spec_reader import read_spec
 from apkverify.model import Severity
-from apkverify.rc_reader import parse_ad_unit_list, read_rc_files
-from apkverify.spec_reader import read_spec
+from apkverify.process.rc_parse import parse_ad_unit_list
+from apkverify.process.static.static_result import build
 
 
 @pytest.mark.real_input
