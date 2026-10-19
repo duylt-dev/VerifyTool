@@ -7,7 +7,7 @@ from pathlib import Path
 import openpyxl
 import pytest
 
-from apkverify.model import AdEvent, ApkFacts, FallbackAsset, Placement, Spec
+from apkverify.model import AdEvent, ApkFacts, FallbackAsset, Placement, ProjectInfo, Spec
 
 ROOT = Path(__file__).resolve().parents[1]
 MINI_APK = ROOT / "tests/fixtures/mini.apk"
@@ -128,6 +128,109 @@ def make_apk_facts(**overrides: object) -> ApkFacts:
     )
     fields.update(overrides)
     return ApkFacts(**fields)
+
+
+def make_project_facts(**overrides: object) -> ApkFacts:
+    """ApkFacts as `input/project_reader.py` returns them; `project=` overrides ProjectInfo fields by keyword."""
+    info = dict(root="/work/Mini", app_module=":app", ad_library="", source_files=3, unresolved=())
+    info.update(overrides.pop("project", {}))
+    fields = dict(file_name="Mini", sha256="", size=0, project=ProjectInfo(**info))
+    fields.update(overrides)
+    return make_apk_facts(**fields)
+
+
+APP_BUILD_KTS = """plugins {
+    alias(libs.plugins.android.application) // not com.android.library
+}
+android {
+    namespace = "com.example.ns"
+    defaultConfig {
+        applicationId = "com.example.mini" // the package
+        versionCode = 7
+        versionName = "1.0-mini"
+    }
+}
+dependencies {
+    implementation(project(":LibAds"))
+    implementation("com.github.piontech96:Dolphin-Ads:1.0.4-alpha37-1")
+}
+"""
+APP_KOTLIN = """package com.example
+
+const val HOME = "home_bottom"
+
+fun show() {
+    showNative(configName = HOME, spaceName = "home_bottom_native") // "line_comment_native"
+    /* showNative(spaceName = "block_native") /* nested */ "still_comment_native" */
+    val label = "x_${listOf("inner").first()}_y"
+    val raw = \"\"\"raw_${HOME}_text\"\"\"
+    val url = "https://example.com/a" // after a // inside a string
+}
+"""
+LIB_JAVA = """package com.example.lib;
+
+class Keys {
+    static final String A = "admob_id";
+    static final String B = "config_show_ads";
+    static final char Q = '"';
+    static final String POOL = "preload_interstitial_ID1"; /* "java_comment" */
+}
+"""
+
+
+def make_project(root: Path, **files: str | None) -> Path:
+    """A mini Android Studio project on disk: Kotlin-DSL app module plus a Groovy library module.
+
+    Keyword arguments replace a file (path with "/" written as "__"); None deletes it.
+    """
+    content: dict[str, str | None] = {
+        "settings.gradle.kts": 'rootProject.name = "Mini"\ninclude(":app")\ninclude(":LibAds")\n// include(":old")\n',
+        "app/build.gradle.kts": APP_BUILD_KTS,
+        "app/src/main/AndroidManifest.xml": (
+            '<manifest xmlns:android="http://schemas.android.com/apk/res/android"><application>'
+            f'<meta-data android:name="{"com.google.android.gms.ads.APPLICATION_ID"}" '
+            'android:value="@string/admob_app_id"/></application></manifest>'
+        ),
+        "app/src/main/res/values/strings.xml": (
+            f'<resources><string name="app_name">Mini</string><string name="admob_app_id">{APP_ID}</string></resources>'
+        ),
+        "app/google-services.json": json.dumps(
+            {
+                "project_info": {"project_id": "mini-project", "project_number": "123456789012"},
+                "client": [
+                    {
+                        "client_info": {
+                            "mobilesdk_app_id": "1:2:android:other",
+                            "android_client_info": {"package_name": "com.other"},
+                        }
+                    },
+                    {
+                        "client_info": {
+                            "mobilesdk_app_id": "1:123456789012:android:0123456789abcdef",
+                            "android_client_info": {"package_name": "com.example.mini"},
+                        }
+                    },
+                ],
+            }
+        ),
+        "app/src/main/assets/admob_id.txt": json.dumps(ad_data()),
+        "app/src/main/java/com/example/Ads.kt": APP_KOTLIN,
+        "app/src/release/java/com/example/Release.kt": 'val R = "release_only"\n',
+        "app/src/debug/java/com/example/Debug.kt": 'val D = "debug_only"\n',
+        "app/src/test/java/com/example/AdsTest.kt": 'val T = "test_only"\n',
+        "LibAds/build.gradle": "plugins {\n    id 'com.android.library'\n}\n",
+        "LibAds/src/main/java/com/example/lib/Keys.java": LIB_JAVA,
+        "LibAds/src/main/assets/config_show_ads.txt": json.dumps(config_data()),
+    }
+    content.update({name.replace("__", "/"): text for name, text in files.items()})
+    for name, text in content.items():
+        path = root / name
+        if text is None:
+            path.unlink(missing_ok=True)
+            continue
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+    return root
 
 
 def make_event(**overrides: object) -> AdEvent:

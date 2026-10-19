@@ -4,10 +4,10 @@ from datetime import datetime
 from pathlib import Path
 
 import pytest
-from conftest import make_apk_facts, make_placement, make_spec
+from conftest import make_apk_facts, make_placement, make_project_facts, make_spec
 
 from apkverify.model import Finding, PlacementStatus, RcValue, Severity, StaticResult
-from apkverify.output.html_report import report_path, write_static
+from apkverify.output.html_report import PROJECT_NOTICE, report_path, write_static
 
 NOW = datetime(2026, 10, 5, 12, 34, 56)
 
@@ -77,3 +77,34 @@ def test_report_path_sanitizes_and_preserves_existing_files(tmp_path: Path) -> N
     third = report_path(tmp_path, "co:app/name", "dev:1/2", NOW, "sta:tic")
     assert third.name == first.stem + "-3.html"
     assert first.read_text(encoding="utf-8") == "existing"
+
+
+def test_project_report(tmp_path: Path) -> None:
+    placement = make_placement()
+    result = StaticResult(
+        make_spec(placement),
+        make_project_facts(package="", version_name="", project={"ad_library": "com.github.piontech96:Dolphin-Ads:1"}),
+        (),
+        (),
+        (PlacementStatus(placement, "OK", "BẬT", "OK", "OK", "ĐẠT"),),
+    )
+    path = write_static(result, tmp_path, NOW)
+    html = path.read_text(encoding="utf-8")
+    assert path.name == "Mini__20261005-123456_project.html"
+    assert f'<p class="warn">{PROJECT_NOTICE}</p>' in html
+    for label, value in (
+        ("Project", "/work/Mini"),
+        ("Module ứng dụng", ":app"),
+        ("Thư viện quảng cáo", "com.github.piontech96:Dolphin-Ads:1"),
+        ("File code đã đọc", "3"),
+        ("Package", "—"),
+        ("versionName", "—"),
+    ):
+        assert f"<dt>{label}</dt><dd>{value}</dd>" in html
+    assert "SHA-256" not in html and "Kích thước" not in html
+
+
+def test_apk_report_has_no_project_notice(tmp_path: Path) -> None:
+    placement = make_placement()
+    result = StaticResult(make_spec(placement), make_apk_facts(), (), (), ())
+    assert PROJECT_NOTICE not in write_static(result, tmp_path, NOW).read_text(encoding="utf-8")

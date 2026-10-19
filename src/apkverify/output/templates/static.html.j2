@@ -3,6 +3,7 @@
   <header class="banner {{ verdict_class }}">
     <h1>{{ verdict }}</h1>
     <p class="muted">{{ generated_at }} · apkverify {{ version }}</p>
+    {% if notice %}<p class="warn">{{ notice }}</p>{% endif %}
   </header>
   <section>
     <h2>Đầu vào</h2>

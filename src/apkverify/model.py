@@ -117,14 +117,28 @@ class FallbackAsset:
     key: str  # Remote Config key; the file is assets/<key>.txt
     present: bool
     text: str  # "" when absent or empty
+    path: str = ""  # where the file is (project: "app/src/main/assets/admob_id.txt"); "" means assets/<key>.txt
+
+
+@dataclass(frozen=True, slots=True)
+class ProjectInfo:
+    """Where `ApkFacts` came from when `apkverify project` read an Android Studio project (static-check-spec §5.1)."""
+
+    root: str  # absolute path of the project directory
+    app_module: str  # Gradle path of the module that applies com.android.application, e.g. ":app"
+    ad_library: str  # "group:artifact:version" of a known ad library dependency (formats.AD_LIBRARIES), "" if none
+    source_files: int  # .kt/.java files whose string literals were read
+    unresolved: tuple[tuple[str, str], ...]  # (fact, what the project says), for "package" and "admob_app_id"
 
 
 @dataclass(frozen=True, slots=True)
 class ApkFacts:
-    file_name: str
-    sha256: str
-    size: int
-    package: str
+    """What the checks know about the build: read from an APK, or from a project when `project` is set."""
+
+    file_name: str  # APK file name; project directory name
+    sha256: str  # "" for a project
+    size: int  # 0 for a project
+    package: str  # "" when a project's applicationId is not a literal
     version_name: str
     version_code: str
     admob_app_id: str | None  # resolved value of meta-data com.google.android.gms.ads.APPLICATION_ID
@@ -132,7 +146,17 @@ class ApkFacts:
     firebase_app_id: str | None
     firebase_sender_id: str | None
     fallbacks: tuple[FallbackAsset, ...]
-    dex_strings: frozenset[str]
+    dex_strings: frozenset[str]  # DEX string table; for a project, the string literals of its .kt/.java files
+    project: ProjectInfo | None = None
+
+    @property
+    def label(self) -> str:
+        """How messages name the build: "APK" or "project"."""
+        return "APK" if self.project is None else "project"
+
+    def known(self, fact: str) -> bool:
+        """False when the project reader could not resolve `fact` ("package", "admob_app_id")."""
+        return self.project is None or all(name != fact for name, _ in self.project.unresolved)
 
 
 # --- Static result (static-check-spec §7, §8) ---

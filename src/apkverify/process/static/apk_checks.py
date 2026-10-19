@@ -1,4 +1,4 @@
-"""Code, manifest and fallback findings (static-check-spec §6.3)."""
+"""Code, manifest and fallback findings (static-check-spec §6.3), for an APK or a project (§5.1)."""
 
 from apkverify import formats
 from apkverify.errors import RcFormatError
@@ -20,6 +20,7 @@ def _fallbacks(spec: Spec, apk: ApkFacts) -> list[Finding]:
     assets = {a.key: a for a in apk.fallbacks}
     for key in formats.FALLBACK_CHECKED_KEYS:
         asset = assets.get(key)
+        file = asset.path if asset is not None and asset.path else f"assets/{key}.txt"
         if asset is None or not asset.present or not asset.text.strip():
             impact = (
                 "nếu key admob_id trên Firebase rỗng, app không có ID quảng cáo nào."
@@ -27,7 +28,7 @@ def _fallbacks(spec: Spec, apk: ApkFacts) -> list[Finding]:
                 else "nếu fetch Remote Config lỗi hoặc key rỗng, "
                 "không vị trí nào có config nên không quảng cáo nào show."
             )
-            findings.append(Finding("APK-FALLBACK-EMPTY", Severity.WARN, f"assets/{key}.txt rỗng: {impact}"))
+            findings.append(Finding("APK-FALLBACK-EMPTY", Severity.WARN, f"{file} rỗng: {impact}"))
             continue
         if key == formats.ADMOB_LIST_KEY:
             try:
@@ -52,36 +53,65 @@ def _fallbacks(spec: Spec, apk: ApkFacts) -> list[Finding]:
                 Finding(
                     "APK-FALLBACK-DIFF",
                     Severity.WARN,
-                    f"assets/{key}.txt khác spec ở: {', '.join(dict.fromkeys(names))}.",
+                    f"{file} khác spec ở: {', '.join(dict.fromkeys(names))}.",
                     tuple(p.row for p in affected),
                 )
             )
     return findings
 
 
+# What a project fact that could not be read stops the tool from checking (PRJ-UNRESOLVED).
+_UNRESOLVED = {
+    "package": ("applicationId", "RC-PACKAGE-MISMATCH"),
+    "admob_app_id": ("AdMob App ID", "RC-APPID-MISMATCH, APK-TEST-APPID"),
+}
+
+
+def _project(apk: ApkFacts) -> list[Finding]:
+    if apk.project is None:
+        return []
+    return [
+        Finding(
+            "PRJ-UNRESOLVED",
+            Severity.WARN,
+            f"Không đọc được {_UNRESOLVED[fact][0]} trong project ({detail}): bỏ qua {_UNRESOLVED[fact][1]}.",
+        )
+        for fact, detail in apk.project.unresolved
+    ]
+
+
 def check(spec: Spec, apk: ApkFacts) -> list[Finding]:
-    findings = []
+    findings = _project(apk)
     for key in formats.REQUIRED_KEYS:
-        if key not in apk.dex_strings:
-            findings.append(
-                Finding(
-                    "APK-LIB-KEYS",
-                    Severity.ERROR,
-                    f"Không thấy key Remote Config '{key}' trong code: APK không dùng thư viện quảng cáo mà tool biết, "
-                    "kết quả kiểm tra không đáng tin.",
-                )
+        if key in apk.dex_strings:
+            continue
+        if apk.project is None:
+            message = (
+                f"Không thấy key Remote Config '{key}' trong code: APK không dùng thư viện quảng cáo mà tool biết, "
+                "kết quả kiểm tra không đáng tin."
             )
+        elif apk.project.ad_library:
+            continue
+        else:
+            message = (
+                f"Không thấy key Remote Config '{key}' trong code của project, và project không khai báo thư viện "
+                f"quảng cáo mà tool biết ({', '.join(formats.AD_LIBRARIES)}): kết quả kiểm tra không đáng tin."
+            )
+        findings.append(Finding("APK-LIB-KEYS", Severity.ERROR, message))
+    where = "APK" if apk.project is None else "Project"
     if apk.admob_app_id is None:
+        manifest = "" if apk.project is None else " trong AndroidManifest.xml"
         findings.append(
             Finding(
                 "APK-NO-APPID",
                 Severity.ERROR,
-                "APK thiếu meta-data com.google.android.gms.ads.APPLICATION_ID: app sẽ crash khi khởi tạo AdMob.",
+                f"{where} thiếu meta-data com.google.android.gms.ads.APPLICATION_ID{manifest}: "
+                "app sẽ crash khi khởi tạo AdMob.",
             )
         )
-    elif formats.is_google_test_id(apk.admob_app_id):
+    elif apk.known("admob_app_id") and formats.is_google_test_id(apk.admob_app_id):
         findings.append(
-            Finding("APK-TEST-APPID", Severity.ERROR, f"APK đang dùng App ID test của Google ({apk.admob_app_id}).")
+            Finding("APK-TEST-APPID", Severity.ERROR, f"{where} đang dùng App ID test của Google ({apk.admob_app_id}).")
         )
     ids = sorted(s for s in apk.dex_strings if s.startswith(f"ca-app-pub-{formats.GOOGLE_TEST_PUBLISHER}/"))[:5]
     if ids:

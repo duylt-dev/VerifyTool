@@ -6,7 +6,7 @@ import pytest
 from conftest import UNIT_ID, ad_data, config_data, write_rc
 
 from apkverify.errors import InputError
-from apkverify.input.rc_reader import read_rc_files
+from apkverify.input.rc_reader import read_rc_answers, read_rc_files
 from apkverify.model import AdUnit, PlacementConfig, RcValue
 from apkverify.process.rc_parse import parse_ad_unit_list, parse_ads_config
 
@@ -75,3 +75,33 @@ def test_unreadable_file(tmp_path: Path) -> None:
         read_rc_files([path])
     assert str(error.value).startswith("Không đọc được file Remote Config absent.json: ")
     assert str(error.value).endswith(".")
+
+
+def test_answers_take_the_key_from_the_question(tmp_path: Path) -> None:
+    admob = write_rc(tmp_path / "admob_id (1).json", ad_data())
+    config = write_rc(tmp_path / "Downloads config.json", config_data())
+    values = read_rc_answers([("admob_id", admob), ("config_show_ads", config)])
+    assert [(v.key, v.source) for v in values] == [
+        ("admob_id", "admob_id (1).json"),
+        ("config_show_ads", "Downloads config.json"),
+    ]
+
+
+def test_one_template_answers_both_questions(tmp_path: Path) -> None:
+    template = write_rc(
+        tmp_path / "remote_config.json", {"admob_id": ad_data(), "config_show_ads": config_data()}, template=True
+    )
+    values = read_rc_answers([("admob_id", template), ("config_show_ads", template)])
+    assert [(v.key, v.source) for v in values] == [
+        ("admob_id", "remote_config.json"),
+        ("config_show_ads", "remote_config.json"),
+    ]
+
+
+def test_answer_clashing_with_a_template_is_an_input_error(tmp_path: Path) -> None:
+    template = write_rc(
+        tmp_path / "remote_config.json", {"admob_id": ad_data(), "config_show_ads": config_data()}, template=True
+    )
+    config = write_rc(tmp_path / "config_show_ads.json", config_data())
+    with pytest.raises(InputError, match="Key Remote Config 'config_show_ads' có ở hai file"):
+        read_rc_answers([("admob_id", template), ("config_show_ads", config)])

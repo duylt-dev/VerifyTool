@@ -1,9 +1,18 @@
-"""Every APK finding has positive and negative evidence (§6.3)."""
+"""Every APK finding has positive and negative evidence (§6.3), for an APK and for a project (§5.1)."""
 
 import json
 
 import pytest
-from conftest import TEST_ID, UNIT_ID, ad_data, config_data, make_apk_facts, make_placement, make_spec
+from conftest import (
+    TEST_ID,
+    UNIT_ID,
+    ad_data,
+    config_data,
+    make_apk_facts,
+    make_placement,
+    make_project_facts,
+    make_spec,
+)
 
 from apkverify.model import FallbackAsset, Finding, Severity
 from apkverify.process.static.apk_checks import check, code_config_state, code_space_state
@@ -137,3 +146,76 @@ def test_grouped_config_and_case_sensitive_states() -> None:
     assert code_space_state(make_placement(ad_id=""), apk) == "—"
     assert code_space_state(make_placement(), make_apk_facts()) == "OK"
     assert code_config_state(make_placement(), make_apk_facts()) == "OK"
+
+
+# --- project facts (static-check-spec §5.1) ---
+
+
+def test_project_lib_keys_accept_a_declared_library() -> None:
+    strings = frozenset({"home_bottom", "home_bottom_native"})
+    declared = make_project_facts(dex_strings=strings, project={"ad_library": "com.github.piontech96:Dolphin-Ads:1"})
+    assert "APK-LIB-KEYS" not in {f.code for f in check(make_spec(), declared)}
+    missing = [f for f in check(make_spec(), make_project_facts(dex_strings=strings)) if f.code == "APK-LIB-KEYS"]
+    assert [f.message for f in missing] == [
+        f"Không thấy key Remote Config '{key}' trong code của project, và project không khai báo thư viện quảng cáo "
+        "mà tool biết (com.github.piontech96:Dolphin-Ads): kết quả kiểm tra không đáng tin."
+        for key in ("admob_id", "config_show_ads")
+    ]
+
+
+def test_project_app_id_messages() -> None:
+    absent = [f.message for f in check(make_spec(), make_project_facts(admob_app_id=None)) if f.code == "APK-NO-APPID"]
+    assert absent == [
+        "Project thiếu meta-data com.google.android.gms.ads.APPLICATION_ID trong AndroidManifest.xml: "
+        "app sẽ crash khi khởi tạo AdMob."
+    ]
+    test_app = make_project_facts(admob_app_id="ca-app-pub-3940256099942544~3347511713")
+    assert [f.message for f in check(make_spec(), test_app) if f.code == "APK-TEST-APPID"] == [
+        "Project đang dùng App ID test của Google (ca-app-pub-3940256099942544~3347511713)."
+    ]
+
+
+def test_project_fallback_path_in_message() -> None:
+    fallbacks = (
+        FallbackAsset("admob_id", False, "", "app/src/main/assets/admob_id.txt"),
+        FallbackAsset("config_show_ads", True, "not json", "LibAds/src/main/assets/config_show_ads.txt"),
+    )
+    messages = [f.message for f in check(make_spec(), make_project_facts(fallbacks=fallbacks))]
+    assert (
+        "app/src/main/assets/admob_id.txt rỗng: nếu key admob_id trên Firebase rỗng, app không có ID quảng cáo nào."
+        in messages
+    )
+    assert "LibAds/src/main/assets/config_show_ads.txt khác spec ở: home_bottom." in messages
+
+
+@pytest.mark.parametrize(
+    "unresolved,message",
+    [
+        (
+            ("package", "libs.versions.appId.get()"),
+            "Không đọc được applicationId trong project (libs.versions.appId.get()): bỏ qua RC-PACKAGE-MISMATCH.",
+        ),
+        (
+            ("admob_app_id", "${admobAppId}"),
+            "Không đọc được AdMob App ID trong project (${admobAppId}): bỏ qua RC-APPID-MISMATCH, APK-TEST-APPID.",
+        ),
+    ],
+)
+def test_project_unresolved(unresolved: tuple[str, str], message: str) -> None:
+    apk = make_project_facts(project={"unresolved": (unresolved,)})
+    assert [f for f in check(make_spec(), apk) if f.code == "PRJ-UNRESOLVED"] == [
+        Finding("PRJ-UNRESOLVED", Severity.WARN, message)
+    ]
+
+
+def test_project_unresolved_absent() -> None:
+    assert "PRJ-UNRESOLVED" not in {f.code for f in check(make_spec(), make_project_facts())}
+    assert "PRJ-UNRESOLVED" not in {f.code for f in check(make_spec(), make_apk_facts())}
+
+
+def test_unresolved_app_id_is_not_checked_for_test_ids() -> None:
+    apk = make_project_facts(
+        admob_app_id="ca-app-pub-3940256099942544~3347511713",
+        project={"unresolved": (("admob_app_id", "@string/x"),)},
+    )
+    assert "APK-TEST-APPID" not in {f.code for f in check(make_spec(), apk)}

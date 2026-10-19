@@ -11,6 +11,11 @@ from jinja2 import Environment, FileSystemLoader, StrictUndefined
 from apkverify import __version__
 from apkverify.model import RuntimeResult, Severity, StaticResult
 
+PROJECT_NOTICE = (
+    "Kiểm tra trên source của project Android. Trước khi gửi MO vẫn phải chạy apkverify static trên APK release: "
+    "source không cho thấy code mà R8 đã xoá, flavor nào được build, hay bản build có mới nhất không."
+)
+
 
 def report_path(out_dir: Path, package: str, version_name: str, now: datetime, kind: str) -> Path:
     parts = (package, version_name, now.strftime("%Y%m%d-%H%M%S"), kind)
@@ -71,13 +76,24 @@ def write_static(result: StaticResult, out_dir: Path, now: datetime) -> Path:
         ]
         severities.append(dict(name=severity.name, style=style, count=result.count(severity), findings=findings))
     apk, spec = result.apk, result.spec
+    versions = (("Package", apk.package), ("versionName", apk.version_name), ("versionCode", apk.version_code))
+    if apk.project is None:
+        build = (
+            ("APK", apk.file_name),
+            ("SHA-256", apk.sha256),
+            ("Kích thước", f"{apk.size / 1_000_000:.2f} MB"),
+            *versions,
+        )
+    else:
+        build = (
+            ("Project", apk.project.root),
+            ("Module ứng dụng", apk.project.app_module),
+            ("Thư viện quảng cáo", apk.project.ad_library or "—"),
+            ("File code đã đọc", apk.project.source_files),
+            *((label, value or "—") for label, value in versions),
+        )
     inputs = (
-        ("APK", apk.file_name),
-        ("SHA-256", apk.sha256),
-        ("Kích thước", f"{apk.size / 1_000_000:.2f} MB"),
-        ("Package", apk.package),
-        ("versionName", apk.version_name),
-        ("versionCode", apk.version_code),
+        *build,
         ("AdMob App ID", apk.admob_app_id or "—"),
         ("Firebase project", apk.firebase_project_id or "—"),
         ("Firebase app ID", apk.firebase_app_id or "—"),
@@ -91,21 +107,24 @@ def write_static(result: StaticResult, out_dir: Path, now: datetime) -> Path:
         generated_at=now.strftime("%Y-%m-%d %H:%M:%S"),
         verdict="ĐẠT" if result.passed else f"KHÔNG ĐẠT: {result.count(Severity.ERROR)} lỗi",
         verdict_class="good" if result.passed else "bad",
+        notice="" if apk.project is None else PROJECT_NOTICE,
         inputs=inputs,
         sources=[(value.key, value.source) for value in result.rc_values],
         severities=severities,
         groups=groups,
     )
     out_dir.mkdir(parents=True, exist_ok=True)
-    path = report_path(out_dir, apk.package, apk.version_name, now, "static")
-    return _write(html, path)
+    kind = "static" if apk.project is None else "project"
+    path = report_path(out_dir, apk.package or apk.file_name, apk.version_name, now, kind)
+    return write_file(html, path)
 
 
-def _write(html: str, path: Path) -> Path:
+def write_file(text: str, path: Path) -> Path:
+    """Write through `<name>.tmp` and `os.replace`, so a crash never leaves a half file that looks complete."""
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
     with temporary.open("w", encoding="utf-8") as stream:
-        stream.write(html)
+        stream.write(text)
         stream.flush()
     os.replace(temporary, path)
     return path
@@ -157,4 +176,4 @@ def write_runtime(result: RuntimeResult, out_dir: Path, now: datetime) -> Path:
         log_file=result.log_file,
     )
     path = report_path(out_dir, apk.package, apk.version_name, now, "runtime")
-    return _write(html, path)
+    return write_file(html, path)

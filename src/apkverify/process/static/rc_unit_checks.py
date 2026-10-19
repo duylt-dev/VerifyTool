@@ -121,20 +121,20 @@ def check(spec: Spec, lists: dict[str, AdUnitList], apk: ApkFacts) -> list[Findi
             )
     admob = lists.get(formats.ADMOB_LIST_KEY)
     if admob:
-        if admob.app_id != apk.admob_app_id:
+        if apk.known("admob_app_id") and admob.app_id != apk.admob_app_id:
             findings.append(
                 Finding(
                     "RC-APPID-MISMATCH",
                     Severity.ERROR,
-                    f"App ID trên Remote Config ({admob.app_id}) khác App ID trong APK ({apk.admob_app_id}).",
+                    f"App ID trên Remote Config ({admob.app_id}) khác App ID trong {apk.label} ({apk.admob_app_id}).",
                 )
             )
-        if admob.package != apk.package:
+        if apk.known("package") and admob.package != apk.package:
             findings.append(
                 Finding(
                     "RC-PACKAGE-MISMATCH",
                     Severity.ERROR,
-                    f"Package trên Remote Config ({admob.package}) khác package APK ({apk.package}).",
+                    f"Package trên Remote Config ({admob.package}) khác package {apk.label} ({apk.package}).",
                 )
             )
     return findings

@@ -3,7 +3,17 @@
 import json
 
 import pytest
-from conftest import APP_ID, OTHER_ID, TEST_ID, UNIT_ID, ad_data, config_data, make_apk_facts, make_spec
+from conftest import (
+    APP_ID,
+    OTHER_ID,
+    TEST_ID,
+    UNIT_ID,
+    ad_data,
+    config_data,
+    make_apk_facts,
+    make_project_facts,
+    make_spec,
+)
 
 from apkverify.model import Finding, RcValue, Severity
 from apkverify.process.static.rc_checks import check
@@ -154,3 +164,18 @@ def test_empty_or_null_id_is_only_rc_id_empty(empty: str | None) -> None:
     codes = [f.code for f in check(make_spec(), values(data), make_apk_facts())]
     assert "RC-ID-EMPTY" in codes
     assert "RC-ID-FORMAT" not in codes
+
+
+def test_project_names_the_project() -> None:
+    findings = check(make_spec(), values(ad_data(appId="other", package="other")), make_project_facts())
+    assert [f.message for f in findings if f.code in {"RC-APPID-MISMATCH", "RC-PACKAGE-MISMATCH"}] == [
+        f"App ID trên Remote Config (other) khác App ID trong project ({APP_ID}).",
+        "Package trên Remote Config (other) khác package project (com.example.mini).",
+    ]
+
+
+def test_project_skips_comparisons_with_unresolved_values() -> None:
+    unresolved = (("package", "libs.versions.appId.get()"), ("admob_app_id", "@string/admob"))
+    apk = make_project_facts(package="", admob_app_id="@string/admob", project={"unresolved": unresolved})
+    codes = {f.code for f in check(make_spec(), values(ad_data(appId="other", package="other")), apk)}
+    assert not codes & {"RC-APPID-MISMATCH", "RC-PACKAGE-MISMATCH"}

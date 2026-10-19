@@ -14,6 +14,10 @@ FALLBACK_CHECKED_KEYS: tuple[str, ...] = ("admob_id", ADS_CONFIG_KEY)  # empty โ
 
 ADMOB_APP_ID_META = "com.google.android.gms.ads.APPLICATION_ID"
 
+# Binary builds of the ad library, as "group:artifact" (static-check-spec ยง5.1). A project that declares one holds
+# the Remote Config keys in that dependency, not in its own source, so APK-LIB-KEYS accepts the declaration instead.
+AD_LIBRARIES: tuple[str, ...] = ("com.github.piontech96:Dolphin-Ads",)
+
 ADMOB_UNIT_ID = re.compile(r"^ca-app-pub-(\d{16})/\d{10}$")
 ADMOB_APP_ID = re.compile(r"^ca-app-pub-(\d{16})~\d{10}$")
 GOOGLE_TEST_PUBLISHER = "3940256099942544"
