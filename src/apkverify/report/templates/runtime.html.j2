@@ -1,0 +1,67 @@
+{% extends "base.html.j2" %}
+{% block content %}
+  <header class="banner {{ verdict_class }}">
+    <h1>{{ verdict }}</h1>
+    <p>apkverify {{ version }} — kiểm tra lúc chạy — {{ generated_at }}</p>
+  </header>
+  <section>
+    <h2>Thông tin phiên kiểm tra</h2>
+    <div class="grid">
+      {% for label, value in inputs %}<dl><dt>{{ label }}</dt><dd>{{ value }}</dd></dl>{% endfor %}
+    </div>
+  </section>
+  <div class="chips">
+    {% for severity in severities %}<span class="chip {{ severity.style }}">{{ severity.name }}: {{ severity.count }}</span>{% endfor %}
+  </div>
+  {% for severity in severities if severity.findings %}
+  <section>
+    <h2 class="{{ severity.style }}">{{ severity.name }} ({{ severity.count }})</h2>
+    <ul class="findings">
+      {% for finding in severity.findings %}
+      <li><strong>{{ finding.code }}</strong>: {{ finding.message }}
+        {% if finding.rows %}<span class="rows">Dòng {{ finding.rows | join(', ') }}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+  <section>
+    <h2>Vị trí quảng cáo</h2>
+    <div class="table-scroll"><table>
+      <thead><tr>
+        {% for label in ['Dòng', 'Task', 'Định Dạng', 'Config Name', 'Ad Space', 'Trạng thái', 'Số lần show', 'Lần đầu', 'Lần cuối', 'Lỗi', 'Kết quả', 'Ghi chú AD'] %}<th>{{ label }}</th>{% endfor %}
+      </tr></thead>
+      <tbody>
+        {% for status in statuses %}
+        {% set p = status.placement %}
+        <tr>
+          <td>{{ p.row }}</td><td>{{ p.task }}</td><td>{{ p.format }}</td>
+          <td><code>{{ p.config_name }}</code></td><td><code>{{ p.space_name }}</code></td>
+          <td class="status {{ status.status | status_class }}">{{ status.status }}</td><td>{{ status.shows }}</td>
+          <td class="nowrap">{{ status.first_time | event_time }}</td><td class="nowrap">{{ status.last_time | event_time }}</td>
+          <td>{{ status.errors | join('; ') }}</td><td class="status {{ status.verdict | status_class }}">{{ status.verdict }}</td>
+          <td>{% if p.note or p.group_note %}<details><summary>Ghi chú AD</summary><div class="note">{{ p.group_note }}{% if p.group_note and p.note %}
+
+{% endif %}{{ p.note }}</div></details>{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table></div>
+  </section>
+  <section>
+    <h2>Dòng thời gian</h2>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Thời gian</th><th>Sự kiện</th><th>Nguồn</th><th>Tên</th><th>Ad unit</th><th>Mã / thông điệp</th></tr></thead>
+      <tbody>
+        {% for event in events %}
+        <tr{% if event.event == 'screen' %} class="group warn"{% endif %}>
+          <td class="nowrap">{{ event.time | event_time }}</td>
+          {% if event.event == 'screen' %}<th>{{ event.event }}</th><th>{{ event.source }}</th>{% else %}<td>{{ event.event }}</td><td>{{ event.source }}</td>{% endif %}
+          <td>{{ event.names | join(' / ') }}</td><td><code>{{ event.ad_unit }}</code></td><td>{{ event.code }} {{ event.message }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table></div>
+    {% if remaining %}<p>… còn {{ remaining }} sự kiện, xem {{ log_file }}</p>{% endif %}
+  </section>
+{% endblock %}

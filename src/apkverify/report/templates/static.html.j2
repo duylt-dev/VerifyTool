@@ -1,0 +1,77 @@
+{% extends "base.html.j2" %}
+{% block content %}
+  <header class="banner {{ verdict_class }}">
+    <h1>{{ verdict }}</h1>
+    <p class="muted">{{ generated_at }} · apkverify {{ version }}</p>
+  </header>
+  <section>
+    <h2>Đầu vào</h2>
+    <div class="grid">
+      {% for label, value in inputs %}
+      <dl><dt>{{ label }}</dt><dd>{% if label == "SHA-256" %}<code>{{ value }}</code>{% else %}{{ value }}{% endif %}</dd></dl>
+      {% endfor %}
+      <dl><dt>Remote Config</dt><dd>
+        {% for key, source in sources %}
+        <div><code>{{ key }}</code> → {{ source }}</div>
+        {% else %}
+        (không có)
+        {% endfor %}
+      </dd></dl>
+    </div>
+  </section>
+  <div class="chips" aria-label="Số lượng theo mức độ">
+    {% for severity in severities %}
+    <span class="chip {{ severity.style }}">{{ severity.name }}: {{ severity.count }}</span>
+    {% endfor %}
+  </div>
+  <section>
+    <h2>Phát hiện</h2>
+    {% for severity in severities %}
+    <h3 class="{{ severity.style }}">{{ severity.name }}</h3>
+    {% if severity.findings %}
+    <ul class="findings">
+      {% for finding in severity.findings %}
+      <li><code class="badge {{ severity.style }}">{{ finding.code }}</code> {{ finding.message }}
+        {% if finding.rows %}<span class="rows">Dòng {{ finding.rows }}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>Không có.</p>
+    {% endif %}
+    {% endfor %}
+  </section>
+  <section>
+    <h2>Vị trí quảng cáo</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Bảng vị trí quảng cáo">
+      <table>
+        <thead><tr>
+          <th scope="col">Dòng</th><th scope="col">Task</th><th scope="col">Định Dạng</th>
+          <th scope="col">Config Name</th><th scope="col">Ad Space</th><th scope="col">ID (spec)</th>
+          <th scope="col">ID trên RC</th><th scope="col">Config trên RC</th>
+          <th scope="col">Code (space)</th><th scope="col">Code (config)</th><th scope="col">Kết quả</th>
+          <th scope="col">Ghi chú AD</th><th scope="col">ClickUp</th>
+        </tr></thead>
+        {% for group in groups %}
+        <tbody>
+          <tr class="group"><th colspan="13" scope="rowgroup">{{ group.title }}
+            {% if group.note %}<details><summary>Ghi chú nhóm</summary><div class="note">{{ group.note }}</div></details>{% endif %}
+          </th></tr>
+          {% for row in group.rows %}
+          <tr>
+            <td>{{ row.placement.row }}</td><td>{{ row.placement.task }}</td><td>{{ row.placement.format }}</td>
+            <td><code>{{ row.placement.config_name }}</code></td>
+            <td><code>{{ row.placement.space_name }}</code></td><td><code>{{ row.placement.ad_id }}</code></td>
+            {% for value, style in row.cells %}
+            <td class="status {{ style }}">{{ value }}</td>
+            {% endfor %}
+            <td>{% if row.placement.note %}<details><summary>Ghi chú AD</summary><div class="note">{{ row.placement.note }}</div></details>{% endif %}</td>
+            <td class="nowrap">{% if row.href %}<a href="{{ row.href }}">{{ row.placement.task_code or "Mở" }}</a>{% else %}{{ row.placement.link }}{% endif %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+  </section>
+{% endblock %}

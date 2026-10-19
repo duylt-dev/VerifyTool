@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>apkverify — {{ verdict }}</title>
+  <style>
+    :root { color-scheme: light dark; --bg: #f5f7fa; --panel: #fff; --ink: #182333;
+      --line: #d6dde6; --stripe: #f0f4f8; --good: #146c36; --bad: #b42318;
+      --warn: #885500; --muted: #536174; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink);
+      font: 15px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main { max-width: 1600px; margin: auto; padding: 24px; min-width: 0; }
+    section, header, footer { margin-bottom: 24px; padding: 20px; border: 1px solid var(--line);
+      border-radius: 10px; background: var(--panel); min-width: 0; }
+    h1, h2, h3, p { margin: 0 0 12px; }
+    h1 { font-size: 28px; } h2 { font-size: 21px; } h3 { font-size: 16px; }
+    .good { color: var(--good); } .bad { color: var(--bad); }
+    .warn { color: var(--warn); } .muted { color: var(--muted); }
+    .banner { border-left: 6px solid currentColor; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+    dl { margin: 0; } dt { font-weight: 600; } dd { margin: 0; overflow-wrap: anywhere; }
+    code { font-family: ui-monospace, Consolas, monospace; overflow-wrap: anywhere; }
+    .chips { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+    .chip, .badge { border: 1px solid currentColor; border-radius: 6px; padding: 3px 8px; font-weight: 600; }
+    .findings { padding-left: 24px; } .findings li { padding: 8px 0; overflow-wrap: anywhere; }
+    .rows { color: var(--muted); margin-left: 8px; }
+    .table-scroll { overflow: auto; max-height: 75vh; max-width: 100%; }
+    table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
+    th, td { padding: 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    thead th { position: sticky; top: 0; background: var(--panel); z-index: 1; white-space: nowrap; }
+    tbody tr:nth-child(even) { background: var(--stripe); }
+    .group th { background: var(--stripe); border-top: 2px solid var(--line); }
+    .status { white-space: nowrap; font-weight: 600; }
+    td code, .nowrap { white-space: nowrap; overflow-wrap: normal; }
+    .note { white-space: pre-wrap; min-width: 220px; max-width: 480px; overflow-wrap: anywhere; }
+    summary { cursor: pointer; font-weight: 500; } a { color: #175bb5; overflow-wrap: anywhere; }
+    footer p:last-child { margin-bottom: 0; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #101820; --panel: #18232e; --ink: #e5ecf3; --line: #405063;
+        --stripe: #202e3d; --good: #81df9d; --bad: #ffaaa1; --warn: #f3c56a; --muted: #adbdce; }
+      a { color: #99c6ff; }
+    }
+    @media print {
+      :root { color-scheme: light; --ink: #182333; --good: #146c36; --bad: #b42318;
+        --warn: #885500; --muted: #536174; }
+      * { background: transparent !important; }
+      main { max-width: none; padding: 0; }
+      .table-scroll { max-height: none; overflow: visible; }
+      thead th { position: static; white-space: normal; }
+      th, td { padding: 4px; overflow-wrap: anywhere; }
+      table { table-layout: fixed; font-size: 9px; }
+      .status { white-space: normal; } .note { min-width: 0; }
+      a { color: #175bb5; }
+    }
+  </style>
+</head>
+<body>
+<main>
+{% block content %}{% endblock %}
+  <footer>
+    <p><strong class="bad">ERROR</strong>: APK không đạt.</p>
+    <p><strong class="warn">WARN</strong>: Cần người xem.</p>
+    <p><strong class="muted">INFO</strong>: Thông tin tham khảo.</p>
+  </footer>
+</main>
+</body>
+</html>
