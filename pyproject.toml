@@ -1,0 +1,43 @@
+[project]
+name = "apkverify"
+version = "0.1.0"
+description = "Verify ads in a release APK against MO's spec and Firebase Remote Config before handing it to MO"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "openpyxl>=3.1",
+    "androguard>=4.1",
+    "jinja2>=3.1",
+]
+
+[project.scripts]
+apkverify = "apkverify.cli:run"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/apkverify"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = [".claude"]  # third-party skill scripts, not ours
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "real_input: runs on the user's files in input/ (skipped when absent)",
+    "device: needs an adb device (skipped unless APKVERIFY_TEST_SERIAL is set)",
+]
